@@ -24,6 +24,9 @@ The goal of this template is to show how I structure embedded software work in a
 embedded-project-template/
 |-- README.md
 |-- CMakeLists.txt
+|-- CONTRIBUTING.md
+|-- .clang-format
+|-- .editorconfig
 |-- include/
 |   `-- app.hpp
 |-- src/
@@ -36,6 +39,7 @@ embedded-project-template/
 |   `-- run_tests.sh
 |-- docs/
 |   |-- ARCHITECTURE.md
+|   |-- coding-style.md
 |   |-- TEST_REPORT.md
 |   `-- DELIVERY_REPORT.md
 |-- .github/
@@ -90,10 +94,13 @@ ctest --test-dir build -C Debug --output-on-failure
 The `docs/` folder contains templates for professional project delivery:
 
 - `ARCHITECTURE.md` - design overview, modules, interfaces, and tradeoffs
+- `coding-style.md` - human-readable coding style, naming, error handling, logging, and comments
 - `TEST_REPORT.md` - test strategy, test cases, results, and known limitations
 - `DELIVERY_REPORT.md` - final client-style delivery summary
 
-The root `STYLE_GUIDE.md` defines coding style rules for C++ implementation, tests, documentation, and review.
+The root `STYLE_GUIDE.md` gives a short coding rules summary. The detailed coding style lives in
+`docs/coding-style.md`, with automated formatting support from `.clang-format` and `.editorconfig`.
+Contributor workflow notes live in `CONTRIBUTING.md`.
 
 ## Intended Use
 
