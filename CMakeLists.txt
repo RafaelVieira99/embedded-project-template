@@ -1,37 +1,37 @@
-# Project Name
+cmake_minimum_required(VERSION 3.16)
 
-## Problem
+project(embedded_project_template
+    VERSION 0.1.0
+    LANGUAGES CXX
+)
 
-What problem does this solve?
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-## Requirements
+add_library(app
+    src/app.cpp
+)
 
-What should the system do?
+target_include_directories(app PUBLIC
+    include
+)
 
-## Architecture
+add_executable(embedded_project_template
+    src/main.cpp
+)
 
-High-level design, components, interfaces.
+target_link_libraries(embedded_project_template PRIVATE
+    app
+)
 
-## Build
+enable_testing()
 
-How to build it.
+add_executable(test_app
+    tests/test_app.cpp
+)
 
-## Run
+target_link_libraries(test_app PRIVATE
+    app
+)
 
-How to run it.
-
-## Test
-
-How to test it.
-
-## Results
-
-Measured output, screenshots, logs, timing results, performance.
-
-## Known limitations
-
-What is not solved yet.
-
-## Future improvements
-
-What could be improved.
+add_test(NAME test_app COMMAND test_app)
