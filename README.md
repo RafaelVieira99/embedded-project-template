@@ -30,7 +30,8 @@ embedded-project-template/
 |   |-- app.cpp
 |   `-- main.cpp
 |-- tests/
-|   `-- test_app.cpp
+|   |-- test_app.cpp
+|   `-- test_template.py
 |-- scripts/
 |   `-- run_tests.sh
 |-- docs/
@@ -91,6 +92,8 @@ The `docs/` folder contains templates for professional project delivery:
 - `ARCHITECTURE.md` - design overview, modules, interfaces, and tradeoffs
 - `TEST_REPORT.md` - test strategy, test cases, results, and known limitations
 - `DELIVERY_REPORT.md` - final client-style delivery summary
+
+The root `STYLE_GUIDE.md` defines coding style rules for C++ implementation, tests, documentation, and review.
 
 ## Intended Use
 

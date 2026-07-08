@@ -1,37 +1,60 @@
-# Project Name
+# Coding Style Rules
 
-## Problem
+These rules define the default coding style for this embedded C/C++ project template. Project-specific rules may extend this file, but should not silently contradict it.
 
-What problem does this solve?
+## General Rules
 
-## Requirements
+- Keep code simple, explicit, and easy to review.
+- Prefer small functions with one clear responsibility.
+- Avoid hidden global state. Pass dependencies through function arguments or constructors where practical.
+- Treat compiler warnings as defects.
+- Do not commit generated build output, temporary files, or local IDE state.
+- Keep public interfaces stable and documented.
 
-What should the system do?
+## C++ Rules
 
-## Architecture
+- Use C++17 unless the project states otherwise.
+- Use `#pragma once` for project headers.
+- Use lower_snake_case for functions and variables.
+- Use PascalCase for types and classes.
+- Use UPPER_SNAKE_CASE only for compile-time constants or macros.
+- Prefer `constexpr`, `enum class`, and typed constants over macros.
+- Prefer RAII and standard library containers over manual memory management.
+- Avoid dynamic allocation in embedded runtime paths unless the architecture explicitly allows it.
+- Mark functions `const`, `noexcept`, or `static` where it improves correctness and clarity.
+- Include the matching project header first in `.cpp` files, followed by standard/library headers.
 
-High-level design, components, interfaces.
+## Formatting
 
-## Build
+- Use 4 spaces for indentation.
+- Put braces on their own line for functions and control blocks.
+- Keep lines reasonably short; target 100 characters or fewer.
+- Add blank lines between logical blocks.
+- Do not align code manually with long runs of spaces.
 
-How to build it.
+## Error Handling
 
-## Run
+- Make failure states visible through return values, status types, assertions, or logs.
+- Do not ignore return values from APIs that can fail.
+- Avoid exceptions in embedded firmware unless the project explicitly enables them.
+- Validate external input at module boundaries.
 
-How to run it.
+## Testing
 
-## Test
+- Add or update tests for every behavior change.
+- Keep unit tests deterministic and independent.
+- Prefer table-driven tests when checking many input/output cases.
+- Test edge cases, invalid inputs, and failure paths.
+- Keep test output useful for debugging failures.
 
-How to test it.
+## Documentation
 
-## Results
+- Document public interfaces, assumptions, timing constraints, and hardware dependencies.
+- Keep `docs/ARCHITECTURE.md`, `docs/TEST_REPORT.md`, and `docs/DELIVERY_REPORT.md` current for delivered work.
+- Use comments to explain why code exists when the reason is not obvious from the implementation.
 
-Measured output, screenshots, logs, timing results, performance.
+## Git and Review
 
-## Known limitations
-
-What is not solved yet.
-
-## Future improvements
-
-What could be improved.
+- Keep commits focused on one logical change.
+- Use clear commit messages that explain the reason for the change.
+- Do not mix formatting-only changes with behavior changes unless the project owner approves it.
