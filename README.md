@@ -1,37 +1,42 @@
-# Project Name
+# Embedded Project Template
 
-## Problem
+A professional template for embedded C/C++ projects.
 
-What problem does this solve?
+This repository defines a clean structure for building, testing, documenting, and delivering embedded software projects. It is intended as a reusable starting point for portfolio projects, freelance assignments, prototypes, and technical demonstrations.
 
-## Requirements
+## Goals
 
-What should the system do?
+The goal of this template is to show how I structure embedded software work in a professional way:
 
-## Architecture
+- clear project layout
+- reproducible build system
+- separation between source, headers, tests, scripts, and documentation
+- basic CMake build flow
+- automated tests
+- GitHub Actions CI
+- architecture documentation
+- test reporting
+- delivery reporting
 
-High-level design, components, interfaces.
+## Repository Structure
 
-## Build
-
-How to build it.
-
-## Run
-
-How to run it.
-
-## Test
-
-How to test it.
-
-## Results
-
-Measured output, screenshots, logs, timing results, performance.
-
-## Known limitations
-
-What is not solved yet.
-
-## Future improvements
-
-What could be improved.
+```text
+embedded-project-template/
+├── README.md
+├── CMakeLists.txt
+├── src/
+│   └── main.cpp
+├── include/
+│   └── app.hpp
+├── tests/
+│   └── test_app.cpp
+├── scripts/
+│   └── run_tests.sh
+├── docs/
+│   ├── ARCHITECTURE.md
+│   ├── TEST_REPORT.md
+│   └── DELIVERY_REPORT.md
+├── .github/
+│   └── workflows/
+│       └── ci.yml
+└── STYLE_GUIDE.md
